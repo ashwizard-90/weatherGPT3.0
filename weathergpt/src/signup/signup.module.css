@@ -1,0 +1,395 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 80px;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+}
+
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 36px;
+}
+
+.railStep {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--paper-2);
+}
+
+.railStep[data-done='true'] {
+  background: var(--cyan);
+}
+
+.railLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--slate-light);
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.stepSubtitle {
+  margin-top: 10px;
+  font-size: 14.5px;
+  color: var(--slate);
+  line-height: 1.6;
+  max-width: 460px;
+}
+
+.form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.helpText {
+  font-size: 12px;
+  color: var(--slate-light);
+}
+
+.input {
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 14.5px;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.input:focus {
+  border-color: var(--cyan);
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.consentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.consentRow input {
+  margin-top: 3px;
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.primaryBtn {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 13px 22px;
+  border-radius: var(--radius-sm);
+  flex: 1;
+  text-align: center;
+}
+
+.primaryBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.backBtn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--slate);
+  padding: 13px 10px;
+}
+
+.footNote {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--slate);
+}
+
+.footNote a {
+  color: var(--cyan-dim);
+  font-weight: 700;
+}
+
+/* Selectable option cards (language / role) */
+.optionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+  .optionGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.optionCard {
+  text-align: left;
+  border: 1.5px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.optionCard[data-selected='true'] {
+  border-color: var(--cyan);
+  background: rgba(45, 168, 216, 0.06);
+}
+
+.optionName {
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--ink);
+}
+
+.optionNative {
+  font-size: 12.5px;
+  color: var(--slate-light);
+}
+
+.optionDesc {
+  font-size: 12.5px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+/* Review page */
+.reviewSection {
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.reviewLabel {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--slate-light);
+  margin-bottom: 6px;
+}
+
+.reviewValue {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.editLink {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--cyan-dim);
+  white-space: nowrap;
+}
+
+/* Checkbox / channel pills */
+.pillRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: 1.5px solid var(--line-light);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--white);
+}
+
+.pill[data-selected='true'] {
+  border-color: var(--cyan);
+  background: rgba(45, 168, 216, 0.1);
+  color: var(--cyan-dim);
+}
+
+.checkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.locationBox {
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--white);
+}
+
+.selectedLocationCard {
+  border: 1.5px solid var(--cyan);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: rgba(45, 168, 216, 0.06);
+}
+
+.selectedLocationHead {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--cyan-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.selectedLocationBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.selectedLocationCard[data-has='false'] {
+  border-style: dashed;
+  background: var(--white);
+  border-color: var(--line-light);
+}
+
+.suggestedGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+@media (max-width: 560px) {
+  .suggestedGrid { grid-template-columns: 1fr; }
+}
+.suggestedCard {
+  text-align: left;
+  border: 1.5px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.suggestedCard[data-active='true'] {
+  border-color: var(--cyan);
+  background: rgba(45, 168, 216, 0.08);
+}
+.suggestedCard:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.suggestedCity {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.suggestedMeta {
+  font-size: 12px;
+  color: var(--slate-light);
+}
+
+/* Alert quick-select chips */
+.chipRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.chip {
+  border: 1px solid var(--line-light);
+  background: var(--white);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--slate);
+}
+.chip[data-active='true'] {
+  border-color: var(--cyan);
+  background: rgba(45, 168, 216, 0.12);
+  color: var(--cyan-dim);
+}
+.selectAllRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--paper-2);
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 13.5px;
+}

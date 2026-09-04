@@ -1,0 +1,21 @@
+.wrap { background: var(--white); border: 1px solid var(--line-light); border-radius: var(--radius-sm); padding: 16px; }
+.filters { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; background: var(--paper); border: 1px solid var(--line-light); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px; }
+.filterGroup { display: flex; flex-direction: column; gap: 6px; }
+.label { font-size: 11px; font-weight: 700; color: var(--slate-light); letter-spacing: 0.02em; }
+.select { border: 1px solid var(--line-light); border-radius: 6px; padding: 8px 10px; font-size: 13px; background: var(--white); min-width: 180px; }
+.runBtn { margin-left: auto; background: var(--ink); color: var(--white); border: none; border-radius: 6px; padding: 10px 16px; font-size: 13px; font-weight: 700; }
+.chartCard { border: 1px solid var(--line-light); border-radius: var(--radius-sm); padding: 14px; background: var(--paper); }
+.chartHead { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+.chartTitle { font-size: 14px; font-weight: 800; }
+.meta { font-size: 11px; color: var(--slate-light); }
+.chartPlaceholder { background: var(--white); border: 1px solid var(--line-light); border-radius: 6px; padding: 12px; margin-top: 12px; }
+.svg { width: 100%; height: auto; }
+.legendLine { display: flex; gap: 16px; margin-top: 8px; font-size: 11px; color: var(--slate); }
+.legendLine i { width: 12px; height: 3px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+.source { font-size: 11px; color: var(--slate-light); margin-top: 8px; }
+.bottomGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+@media (max-width: 760px) { .bottomGrid { grid-template-columns: 1fr; } }
+.smallCard { border: 1px solid var(--line-light); border-radius: var(--radius-sm); padding: 14px; background: var(--white); }
+.metricRow { display: flex; justify-content: space-between; font-size: 13px; margin-top: 10px; }
+.bar { height: 6px; background: var(--paper-2); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+.bar span { height: 100%; display: block; border-radius: 999px; }

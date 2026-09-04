@@ -1,0 +1,354 @@
+:root {
+  --ink: #0b1220;
+  --ink-2: #101a2c;
+  --ink-3: #182338;
+  --paper: #f5f7fa;
+  --paper-2: #ebeef3;
+  --cyan: #2da8d8;
+  --cyan-dim: #1f7fa3;
+  --amber: #f2a93b;
+  --red: #d64550;
+  --green: #3fa66a;
+  --slate: #5b6b7e;
+  --slate-light: #8695a7;
+  --line-dark: rgba(245, 247, 250, 0.1);
+  --line-light: rgba(11, 18, 32, 0.1);
+  --white: #ffffff;
+
+  --font-ui: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  --shadow-none: none;
+}
+
+[data-theme='dark'] {
+  --ink: #f5f7fa;
+  --ink-2: #e0e7ff;
+  --ink-3: #cbd5e1;
+  --paper: #0b1220;
+  --paper-2: #1a2336;
+  --slate: #b0bdd1;
+  --slate-light: #7a8aa6;
+  --line-light: rgba(245, 247, 250, 0.14);
+  --line-dark: rgba(245, 247, 250, 0.08);
+  --white: #182338;
+  --cyan: #38bdf8;
+  --cyan-dim: #0ea5e9;
+}
+[data-theme='dark'] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+/* Keep sidebar always dark — don't let var(--ink) inversion make it light */
+[data-theme='dark'] .sidebar {
+  background: #0b1220 !important;
+  color: #f5f7fa !important;
+}
+/* Navbar stays dark already, ensure links stay light */
+[data-theme='dark'] .bar {
+  background: rgba(11, 18, 32, 0.96) !important;
+}
+/* Cards / panels in dark: ensure readable contrast */
+[data-theme='dark'] .panel,
+[data-theme='dark'] .state-loading,
+[data-theme='dark'] .state-empty,
+[data-theme='dark'] .state-error {
+  background: #182338 !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+/* ChatBot: keep header/body readable in dark */
+[data-theme='dark'] .widget {
+  background: #182338 !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+[data-theme='dark'] .widget .header,
+[data-theme='dark'] .widget .footer,
+[data-theme='dark'] .widget .powered {
+  background: #182338 !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+[data-theme='dark'] .widget .body {
+  background: #0b1220 !important;
+}
+[data-theme='dark'] .bubble {
+  background: #1e2a44 !important;
+  border-color: #2a3a5c !important;
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] .bubble div {
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] .metaCard {
+  background: #0b1220 !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+/* Inputs/selects in dark */
+[data-theme='dark'] input,
+[data-theme='dark'] select,
+[data-theme='dark'] textarea {
+  background: #1a2336 !important;
+  color: #f5f7fa !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+[data-theme='dark'] input::placeholder {
+  color: #7a8aa6 !important;
+}
+/* Topbar in dark */
+[data-theme='dark'] .topbar {
+  background: #182338 !important;
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+/* Ensure icons with fixed dark colors become light in dark */
+[data-theme='dark'] svg[stroke="currentColor"],
+[data-theme='dark'] svg[fill="currentColor"] {
+  color: #f5f7fa;
+}
+/* Fix hardcoded light card backgrounds that would stay light in dark (invisible light-on-light) */
+[data-theme='dark'] [style*="background: #f8fafc"],
+[data-theme='dark'] [style*="background:#f8fafc"],
+[data-theme='dark'] [style*="background: #ffffff"],
+[data-theme='dark'] [style*="background:#ffffff"],
+[data-theme='dark'] [style*="background: #fff"],
+[data-theme='dark'] [style*="background: white"],
+[data-theme='dark'] [style*="background:#fff"] {
+  background-color: #1e293b !important;
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] [style*="background: #eff6ff"],
+[data-theme='dark'] [style*="background:#eff6ff"] {
+  background-color: #1e2a44 !important;
+}
+[data-theme='dark'] [style*="background: #e0f2fe"],
+[data-theme='dark'] [style*="background:#e0f2fe"] {
+  background-color: #1e3a4a !important;
+}
+[data-theme='dark'] [style*="background: #dcfce7"] {
+  background-color: #143320 !important;
+  color: #86efac !important;
+  border-color: #166534 !important;
+}
+[data-theme='dark'] [style*="background: #f0fdf4"] {
+  background-color: #143320 !important;
+}
+[data-theme='dark'] [style*="background: #fef2f2"],
+[data-theme='dark'] [style*="background:#fef2f2"] {
+  background-color: #3a1a1a !important;
+}
+/* Ensure dark text on dark becomes light */
+[data-theme='dark'] [style*="color: #0b1220"],
+[data-theme='dark'] [style*="color:#0b1220"] {
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] [style*="color: #101a2c"] {
+  color: #e0e7ff !important;
+}
+/* Landing page hero stays dark in both modes — ensure text stays light */
+[data-theme='dark'] .hero {
+  background: radial-gradient(circle at 15% 0%, #1e293b 0%, #0b1220 55%) !important;
+}
+[data-theme='dark'] .hero .title,
+[data-theme='dark'] .hero .subtitle,
+[data-theme='dark'] .hero .eyebrow,
+[data-theme='dark'] .hero .tickerValue,
+[data-theme='dark'] .hero .tickerLabel {
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] .capSection,
+[data-theme='dark'] .sources {
+  background: #0b1220 !important;
+}
+[data-theme='dark'] .capTitle,
+[data-theme='dark'] .featureName,
+[data-theme='dark'] .sourcesTitle {
+  color: #f5f7fa !important;
+}
+/* Ensure images/pictures have contrast in dark */
+[data-theme='dark'] img {
+  background-color: #1a2336 !important;
+  border-color: rgba(245,247,250,0.14) !important;
+}
+[data-theme='dark'] .sources .sourceLogos span {
+  color: #94a3b8 !important;
+}
+/* Fix hardcoded light backgrounds that become invisible in dark — force dark equivalents */
+[data-theme='dark'] [style*="background: #f8fafc"],
+[data-theme='dark'] [style*="background:#f8fafc"],
+[data-theme='dark'] [style*="background: #ffffff"],
+[data-theme='dark'] [style*="background:#ffffff"],
+[data-theme='dark'] [style*="background: var(--white)"] {
+  background-color: #182338 !important;
+}
+[data-theme='dark'] [style*="background: #eff6ff"],
+[data-theme='dark'] [style*="background:#eff6ff"],
+[data-theme='dark'] [style*="background: #e0f2fe"],
+[data-theme='dark'] [style*="background:#e0f2fe"] {
+  background-color: #1e2a44 !important;
+}
+[data-theme='dark'] [style*="background: #dcfce7"],
+[data-theme='dark'] [style*="background:#dcfce7"] {
+  background-color: #143320 !important;
+}
+/* Fix hardcoded dark text on dark background */
+[data-theme='dark'] [style*="color: #0b1220"],
+[data-theme='dark'] [style*="color:#0b1220"],
+[data-theme='dark'] [style*="color: #101a2c"],
+[data-theme='dark'] [style*="color:#101a2c"] {
+  color: #f5f7fa !important;
+}
+[data-theme='dark'] [style*="color: #182338"] {
+  color: #e0e7ff !important;
+}
+/* Ensure slate text remains readable in dark */
+[data-theme='dark'] [style*="color: var(--slate)"] {
+  color: #b0bdd1 !important;
+}
+[data-theme='dark'] [style*="color: var(--slate-light)"] {
+  color: #7a8aa6 !important;
+}
+/* Panels with inline light borders */
+[data-theme='dark'] [style*="border: 1px solid var(--line-light)"],
+[data-theme='dark'] [style*="border:1px solid var(--line-light)"] {
+  border-color: rgba(245, 247, 250, 0.14) !important;
+}
+/* Ensure all inline white cards get dark bg */
+[data-theme='dark'] [style*="background: white"],
+[data-theme='dark'] [style*="background:white"],
+[data-theme='dark'] [style*="background: #fff"] {
+  background-color: #182338 !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* RTL support — Urdu and any future RTL language */
+html[dir='rtl'] body {
+  direction: rtl;
+  text-align: right;
+}
+html[dir='rtl'] .container {
+  direction: rtl;
+}
+html[dir='rtl'] input,
+html[dir='rtl'] select,
+html[dir='rtl'] textarea {
+  text-align: right;
+}
+
+/* Prevent translated text from breaking layout */
+h1,
+h2,
+h3,
+p,
+span,
+label,
+button {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Ensure minimum 44px touch targets and visible focus */
+button,
+a,
+[role='button'],
+input,
+select {
+  min-height: 44px;
+}
+button {
+  min-width: 44px;
+}
+
+/* High-contrast focus for a11y */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* Loading / error / empty state helpers */
+.state-loading,
+.state-error,
+.state-empty {
+  padding: 20px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--slate);
+  font-size: 13.5px;
+}
+.state-error {
+  border-left: 4px solid var(--red);
+  color: var(--red);
+}
+.state-loading {
+  border-left: 4px solid var(--cyan);
+}
+.state-empty {
+  border-left: 4px solid var(--slate-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
